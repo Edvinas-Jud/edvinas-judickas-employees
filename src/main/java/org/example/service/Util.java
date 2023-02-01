@@ -10,15 +10,6 @@ public class Util {
     private static final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss");
     private static final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
-    public static String getDateTimeFormatted(LocalDateTime dateTime) {
-        return dateTimeFormatter.format(dateTime);
-    }
-
-
-    public static String getDateFormatted(LocalDateTime dateTime) {
-        return dateFormatter.format(dateTime);
-    }
-
     public static LocalDate convertDate(String date) {
         if (date.equalsIgnoreCase("NULL")) {
             return LocalDate.now();
@@ -28,11 +19,6 @@ public class Util {
 
     public static LocalDateTime convertDateTime(String date) {
         return LocalDateTime.of(LocalDate.parse(date, dateTimeFormatter), LocalTime.of(0, 0, 0));
-    }
-
-    public static LocalDateTime convertDateTimeWrite(String date) {
-        convertDate(date);
-        return convertDateTime(date);
     }
 
 
